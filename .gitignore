@@ -1,0 +1,29 @@
+# Environment configuration
+.env
+*.env
+
+# Data files (contain user submissions and sensitive data)
+data/submissions/*.json
+data/creators/*.json
+
+# Keep example files but ignore actual application data
+data/apps/*.astappcnt
+!data/apps/example.astappcnt
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Temporary files
+tmp/
+temp/
+*.tmp
