@@ -1,0 +1,81 @@
+APP {
+  id: "example_staff_app";
+  name: "Staff Application";
+  description: "Apply to become a staff member in our Roblox group";
+  group_id: 123456;
+  target_role: "groups/123456/roles/99999999";
+  pass_score: 75;
+}
+
+STYLE {
+  primary_color: "#ff4b6e";
+  secondary_color: "#1f2933";
+  background: "gradient:linear,#1f2933,#111827";
+  font: "Inter";
+  button_shape: "pill";
+}
+
+QUESTION "q1" TYPE "multiple_choice" {
+  text: "Why do you want to join our staff team?";
+  description: "Select the option that best describes your motivation";
+  points: 10;
+  options: [
+    {id:"a", text:"I want to help the community", correct:true},
+    {id:"b", text:"I want power", correct:false},
+    {id:"c", text:"My friend is staff", correct:false},
+    {id:"d", text:"I'm bored", correct:false}
+  ];
+}
+
+QUESTION "q2" TYPE "short_answer" {
+  text: "Describe a time when you helped someone in a Roblox game.";
+  max_length: 300;
+  points: 25;
+  grading_criteria: "Look for specific examples, empathy, and problem-solving skills. Award full points for detailed, genuine responses.";
+}
+
+QUESTION "q3" TYPE "checkboxes" {
+  text: "Which of the following responsibilities are you comfortable with?";
+  points: 20;
+  max_score: 20;
+  scoring: {
+    points_per_correct: 5;
+    penalty_per_incorrect: 2;
+  };
+  options: [
+    {id:"a", text:"Moderating chat", correct:true},
+    {id:"b", text:"Handling reports", correct:true},
+    {id:"c", text:"Banning players without reason", correct:false},
+    {id:"d", text:"Training new staff", correct:true},
+    {id:"e", text:"Giving yourself admin commands", correct:false}
+  ];
+}
+
+QUESTION "q4" TYPE "multiple_choice" {
+  text: "How would you handle a player who is constantly breaking rules?";
+  points: 15;
+  options: [
+    {id:"a", text:"Give them multiple warnings, then escalate if needed", correct:true},
+    {id:"b", text:"Ban them immediately", correct:false},
+    {id:"c", text:"Ignore them", correct:false},
+    {id:"d", text:"Argue with them", correct:false}
+  ];
+}
+
+QUESTION "q5" TYPE "short_answer" {
+  text: "What unique skills or qualities would you bring to our staff team?";
+  max_length: 250;
+  points: 20;
+  grading_criteria: "Look for self-awareness, relevant skills, and positive attitude. Award points for specific examples and realistic self-assessment.";
+}
+
+QUESTION "q6" TYPE "multiple_choice" {
+  text: "How many hours per week can you dedicate to staff duties?";
+  points: 10;
+  options: [
+    {id:"a", text:"Less than 5 hours", correct:false},
+    {id:"b", text:"5-10 hours", correct:true},
+    {id:"c", text:"10-20 hours", correct:true},
+    {id:"d", text:"20+ hours", correct:true}
+  ];
+}

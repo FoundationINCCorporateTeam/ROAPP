@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Center Builder</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">🚀 Application Center</div>
+                
+                <div style="display: flex; gap: 1rem; align-items: center;">
+                    <button id="new-app-btn" class="btn btn-secondary">+ New Application</button>
+                    <button id="save-app-btn" class="btn btn-primary">💾 Save</button>
+                    <div id="theme-toggle" class="theme-toggle"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Layout -->
+    <div class="container">
+        <div class="main-layout">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="glass-card">
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">Applications</h3>
+                        <ul id="app-list" class="sidebar-list">
+                            <!-- Populated by JavaScript -->
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">Quick Actions</h3>
+                        <ul class="sidebar-list">
+                            <li class="sidebar-item" onclick="window.location.href='index.php?action=listSubmissions'">
+                                <span>📊</span>
+                                <span>View Submissions</span>
+                            </li>
+                            <li class="sidebar-item" onclick="alert('Coming soon!')">
+                                <span>⚙️</span>
+                                <span>Settings</span>
+                            </li>
+                            <li class="sidebar-item" onclick="alert('API Documentation coming soon!')">
+                                <span>📖</span>
+                                <span>Documentation</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- Builder Area -->
+            <main id="builder-area" class="builder-area">
+                <!-- Populated by JavaScript -->
+                <div class="glass-card" style="text-align: center; padding: 4rem 2rem;">
+                    <h1 style="margin-bottom: 1rem;">✨ Welcome to Application Center</h1>
+                    <p class="text-muted" style="font-size: 1.25rem; margin-bottom: 2rem;">
+                        Create beautiful, auto-graded applications for your Roblox group
+                    </p>
+                    <button onclick="appBuilder.createNewApp()" class="btn btn-primary" style="font-size: 1.125rem; padding: 1rem 2rem;">
+                        🚀 Create Your First Application
+                    </button>
+                </div>
+            </main>
+            
+            <!-- Preview Panel -->
+            <aside class="preview-panel">
+                <div class="glass-card">
+                    <h3 style="margin-bottom: 1rem;">📱 Live Preview</h3>
+                    
+                    <div class="preview-device">
+                        <div class="preview-content" id="preview-content">
+                            <p class="text-muted text-center">Preview will appear here</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-muted" style="font-size: 0.875rem; margin-top: 1rem; text-align: center;">
+                        See how your application will look in Roblox
+                    </p>
+                </div>
+            </aside>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer style="padding: 2rem 0; text-align: center; color: var(--text-tertiary); border-top: 1px solid var(--border-color); margin-top: 4rem;">
+        <div class="container">
+            <p>Built with ❤️ for Roblox Groups • Powered by Gemma-3-27B-IT</p>
+        </div>
+    </footer>
+    
+    <script src="assets/js/builder.js"></script>
+</body>
+</html>
