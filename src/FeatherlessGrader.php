@@ -5,6 +5,10 @@
  * Uses Gemma-3-27B-IT through Featherless AI API to grade short answer questions
  */
 class FeatherlessGrader {
+    // API Configuration constants
+    const DEFAULT_MAX_TOKENS = 1000;
+    const DEFAULT_TEMPERATURE = 0.7;
+    
     private $apiKey;
     private $baseUrl;
     private $model;
@@ -72,8 +76,8 @@ PROMPT;
         $payload = [
             'model' => $this->model,
             'prompt' => $prompt,
-            'max_tokens' => 1000,
-            'temperature' => 0.7
+            'max_tokens' => Env::get('FEATHERLESS_MAX_TOKENS', self::DEFAULT_MAX_TOKENS),
+            'temperature' => floatval(Env::get('FEATHERLESS_TEMPERATURE', self::DEFAULT_TEMPERATURE))
         ];
         
         $ch = curl_init($this->baseUrl . '/completions');

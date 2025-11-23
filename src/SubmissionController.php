@@ -5,6 +5,9 @@
  * Handles application submissions and grading
  */
 class SubmissionController {
+    // Configuration constants
+    const MAX_SHORT_ANSWER_QUESTIONS = 3;
+    
     private $dataDir;
     private $grader;
     private $promotionService;
@@ -126,12 +129,12 @@ class SubmissionController {
             } elseif ($questionType === 'short_answer') {
                 $shortAnswerCount++;
                 
-                // Enforce limit of 3 short answer questions
-                if ($shortAnswerCount > 3) {
+                // Enforce limit of short answer questions
+                if ($shortAnswerCount > self::MAX_SHORT_ANSWER_QUESTIONS) {
                     $results[$questionId] = [
                         'score' => 0,
                         'max_score' => $question['points'] ?? 0,
-                        'feedback' => 'Too many short answer questions (max 3)'
+                        'feedback' => 'Too many short answer questions (max ' . self::MAX_SHORT_ANSWER_QUESTIONS . ')'
                     ];
                 } else {
                     $results[$questionId] = $this->gradeShortAnswer($question, $answer);

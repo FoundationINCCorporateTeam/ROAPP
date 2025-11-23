@@ -79,7 +79,7 @@ class PromotionService {
         // Find the membership for this user
         foreach ($data['groupMemberships'] as $membership) {
             if (isset($membership['user']) && 
-                str_contains($membership['user'], "users/{$userId}")) {
+                strpos($membership['user'], "users/{$userId}") !== false) {
                 return $membership['path'];
             }
         }

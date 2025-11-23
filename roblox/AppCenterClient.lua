@@ -565,13 +565,13 @@ function AppCenterClient:CreateSubmitButton(parent, player)
                 submitBtn.BackgroundColor3 = Color3.fromRGB(239, 68, 68)
             end
             
-            wait(3)
+            task.wait(3)
             parent.Parent:Destroy()
         else
             submitBtn.Text = "Failed - Try Again"
             submitBtn.BackgroundColor3 = Color3.fromRGB(239, 68, 68)
             
-            wait(2)
+            task.wait(2)
             submitBtn.Text = "Submit Application"
             submitBtn.BackgroundColor3 = Color3.fromRGB(255, 75, 110)
         end

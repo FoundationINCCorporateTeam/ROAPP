@@ -270,6 +270,12 @@ class AppBuilder {
             return;
         }
         
+        // Validate points
+        if (isNaN(points) || points < 1 || points > 100) {
+            this.showToast('Points must be between 1 and 100', 'error');
+            return;
+        }
+        
         const question = {
             id: 'q' + Date.now(),
             type: type,
