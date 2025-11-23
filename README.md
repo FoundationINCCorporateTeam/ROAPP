@@ -284,7 +284,7 @@ This is a production-ready system. For modifications:
 
 ## 📄 License
 
-Proprietary - All rights reserved
+MIT License - see [LICENSE](LICENSE) file for details
 
 ## 🆘 Support
 

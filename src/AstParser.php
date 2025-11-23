@@ -214,7 +214,8 @@ class AstParser {
             $properties[$key] = $value;
             
             $this->skipWhitespace();
-            if ($this->peek() === ',') {
+            $char = $this->peek();
+            if ($char === ',' || $char === ';') {
                 $this->position++;
             }
         }
